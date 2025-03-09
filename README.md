@@ -12,6 +12,8 @@ To start the game, follow these steps:
 
 ---
 
+![](images/beginning_screen.png)
+
 Feel free to modify the game as you wish!
 
 ## Contact Information
