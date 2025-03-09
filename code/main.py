@@ -3,14 +3,14 @@ import sys
 import os
 from code.constants import *
 from code.dashboard import Dashboard
-from code.Object.Plongeur import Plongeur
-from code.Fishes.Fish import Fish
+from code.objects.plongeur import Plongeur
+from code.fishes.fish import Fish
 import random
-from code.Fishes.BigFish import BigFish
-from code.Fishes.DartFish import DartFish
-from code.Fishes.GlobeFish import GlobeFish
-from code.BegginingScreen import beginning, square_breath, countdown, menu, selection, credits
-from code.Fishes.Shark import Shark
+from code.fishes.big_fish import BigFish
+from code.fishes.dart_fish import DartFish
+from code.fishes.globe_fish import GlobeFish
+from code.begginning_screen import beginning, square_breath, countdown, menu, selection, credits
+from code.fishes.shark import Shark
 
 
 
@@ -124,10 +124,10 @@ def run_game(screen):
 
         if (plongeur.start and plongeur.air <= 0) or (plongeur.energie == 0 and plongeur.vitesse > 0.3):
             play_again = False
-            font = pygame.font.Font("Font/04B_03__.TTF", 30)
+            font = pygame.font.Font("font/04B_03__.TTF", 30)
             #Dim : 48 * 16 pixels
-            button_image1 = pygame.image.load("images/Button/[1] Normal.png").convert_alpha()
-            button_image2 = pygame.image.load("images/Button/[2] Clicked.png").convert_alpha()
+            button_image1 = pygame.image.load("images/button/[1] Normal.png").convert_alpha()
+            button_image2 = pygame.image.load("images/button/[2] Clicked.png").convert_alpha()
             button_image1 = pygame.transform.scale(button_image1, (screen_width() // 6, screen_width() // 6 * 16 /48))
             button_image2 = pygame.transform.scale(button_image2, (screen_width() // 6, screen_width() // 6 * 16 /48))
             button_rect_play = button_image1.get_rect()
@@ -188,10 +188,10 @@ def run_game(screen):
         if plongeur.start and plongeur.profondeur <= 0 and plongeur.profondeur_max > 0:
             if mod == "Play":
                 detection = False
-                font = pygame.font.Font("Font/04B_03__.TTF", 30)
+                font = pygame.font.Font("font/04B_03__.TTF", 30)
                 #Dim : 48 * 16 pixels
-                button_image1 = pygame.image.load("images/Button/[1] Normal.png").convert_alpha()
-                button_image2 = pygame.image.load("images/Button/[2] Clicked.png").convert_alpha()
+                button_image1 = pygame.image.load("images/button/[1] Normal.png").convert_alpha()
+                button_image2 = pygame.image.load("images/button/[2] Clicked.png").convert_alpha()
                 button_image1 = pygame.transform.scale(button_image1, (screen_width() // 6, screen_width() // 6 * 16 /48))
                 button_image2 = pygame.transform.scale(button_image2, (screen_width() // 6, screen_width() // 6 * 16 /48))
                 button_rect_yes = button_image1.get_rect()
@@ -259,10 +259,10 @@ def run_game(screen):
                         fichier.write(str(round(plongeur.profondeur_max,1)))
 
             play_again = False
-            font = pygame.font.Font("Font/04B_03__.TTF", 30)
+            font = pygame.font.Font("font/04B_03__.TTF", 30)
             #Dim : 48 * 16 pixels
-            button_image1 = pygame.image.load("images/Button/[1] Normal.png").convert_alpha()
-            button_image2 = pygame.image.load("images/Button/[2] Clicked.png").convert_alpha()
+            button_image1 = pygame.image.load("images/button/[1] Normal.png").convert_alpha()
+            button_image2 = pygame.image.load("images/button/[2] Clicked.png").convert_alpha()
             button_image1 = pygame.transform.scale(button_image1, (screen_width() // 6, screen_width() // 6 * 16 /48))
             button_image2 = pygame.transform.scale(button_image2, (screen_width() // 6, screen_width() // 6 * 16 /48))
             button_rect_play = button_image1.get_rect()
@@ -335,7 +335,7 @@ def run_game(screen):
         pygame.display.flip()
 
 def afficher_message(screen, message, w, h):
-    font = pygame.font.Font("Font/04B_03__.TTF", 40)
+    font = pygame.font.Font("font/04B_03__.TTF", 40)
     text = font.render(message, True, WHITE)
     text_rect = text.get_rect(center= (w, h))
     # screen.fill(BLUE)

@@ -1,5 +1,5 @@
 import pygame
-from code.Fishes.FishAbstract import AbstractFish
+from code.fishes.fish_abstract import AbstractFish
 import random
 from code.constants import *
 from code.utils import convert_to_y

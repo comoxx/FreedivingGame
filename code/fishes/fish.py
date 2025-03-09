@@ -1,5 +1,5 @@
 import pygame
-from code.Fishes.FishAbstract import AbstractFish
+from code.fishes.fish_abstract import AbstractFish
 import random
 from code.constants import *
 from code.utils import convert_to_y
@@ -9,7 +9,7 @@ frames_count = 4
 class Fish(AbstractFish):
     def __init__(self, plongeur):
         super().__init__(plongeur)
-        self.images = [pygame.image.load(f"images/Fish/frame_{i}_delay-0.1s.png") for i in range(frames_count)]
+        self.images = [pygame.image.load(f"images/fish/frame_{i}_delay-0.1s.png") for i in range(frames_count)]
         self.dim = random.randint(30,100)
         self.images = [pygame.transform.scale(img, (self.dim, self.dim)) for img in self.images]
         self.image = self.images[0]

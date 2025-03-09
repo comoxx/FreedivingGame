@@ -9,7 +9,7 @@ frames_count = 5
 class Bubbles(pygame.sprite.Sprite):
     def __init__(self, screen, bubbles_behind, bubbles_infront):
         super().__init__()
-        self.image = pygame.image.load(f"images/bubble.png")
+        self.image = pygame.image.load(f"images/background/bubble.png")
         self.dim = random.randint(20,150)
         self.image = pygame.transform.scale(self.image, (self.dim, self.dim))
         self.rect = self.image.get_rect()

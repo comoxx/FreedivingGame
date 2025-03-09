@@ -1,6 +1,6 @@
 import pygame
 import time
-from code.Object.Bubbles import Bubbles
+from code.objects.bubbles import Bubbles
 import random
 from code.constants import *
 
@@ -44,8 +44,8 @@ def draw_text_centered(surface, text_lines, font, color, center_x = None, center
 all_sprites = pygame.sprite.Group()
 
 def draw_foreground(screen):
-    image_1 = pygame.image.load("images/Background/foreground-1.png").convert_alpha()
-    image_2 = pygame.image.load("images/Background/foreground-2.png").convert_alpha()
+    image_1 = pygame.image.load("images/background/foreground-1.png").convert_alpha()
+    image_2 = pygame.image.load("images/background/foreground-2.png").convert_alpha()
     rect = image_1.get_rect()
     hauteur_image = rect.height #192 px for both
     largeur_image = rect.width # 256 px for both
@@ -60,8 +60,8 @@ def draw_background(screen):
     global bubbles_behind
     global bubbles_infront
     global all_sprites
-    image_far = pygame.image.load("images/Background/far.png").convert_alpha()
-    image_sand = pygame.image.load("images/Background/sand.png").convert_alpha()
+    image_far = pygame.image.load("images/background/far.png").convert_alpha()
+    image_sand = pygame.image.load("images/background/sand.png").convert_alpha()
     rect = image_sand.get_rect()
     hauteur_image = rect.height #192
     largeur_image = rect.width #256
@@ -100,8 +100,8 @@ def draw_background(screen):
 def menu(screen):
     global bubbles_infront, bubbles_behind
     running_menu = True
-    font_title = pygame.font.Font("Font/04B_03__.TTF", 100)
-    font = pygame.font.Font("Font/04B_03__.TTF", 30)
+    font_title = pygame.font.Font("font/04B_03__.TTF", 100)
+    font = pygame.font.Font("font/04B_03__.TTF", 30)
     color_title = (20,20,110)
     frame_count = 0
     while running_menu:
@@ -133,11 +133,11 @@ def menu(screen):
 
 def selection(screen):
     running = True
-    font = pygame.font.Font("Font/04B_03__.TTF", 30)
-    font_credits = pygame.font.Font("Font/04B_03__.TTF", 24)
+    font = pygame.font.Font("font/04B_03__.TTF", 30)
+    font_credits = pygame.font.Font("font/04B_03__.TTF", 24)
     #Dim : 48 * 16 pixels
-    button_image1 = pygame.image.load("images/Button/[1] Normal.png").convert_alpha()
-    button_image2 = pygame.image.load("images/Button/[2] Clicked.png").convert_alpha()
+    button_image1 = pygame.image.load("images/button/[1] Normal.png").convert_alpha()
+    button_image2 = pygame.image.load("images/button/[2] Clicked.png").convert_alpha()
     button_image1 = pygame.transform.scale(button_image1, (screen_width() // 6, screen_width() // 6 * 16 /48))
     button_image2 = pygame.transform.scale(button_image2, (screen_width() // 6, screen_width() // 6 * 16 /48))
     
@@ -154,7 +154,7 @@ def selection(screen):
     button_rect_credits.center = (screen_width() // 2, 7*screen_height()//8)
     color_title = (20,20,110)
 
-    font_title = pygame.font.Font("Font/04B_03__.TTF", 100)
+    font_title = pygame.font.Font("font/04B_03__.TTF", 100)
 
     while running:
         mouse_x, mouse_y = pygame.mouse.get_pos()
@@ -214,7 +214,7 @@ def selection(screen):
 def credits(screen):
     global bubbles_behind, bubbles_infront
     running_menu = True
-    font = pygame.font.Font("Font/04B_03__.TTF", 30)
+    font = pygame.font.Font("font/04B_03__.TTF", 30)
     while running_menu:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -254,7 +254,7 @@ def credits(screen):
 def beginning(screen, mod):
     global bubbles_behind, bubbles_infront
     running_menu = True
-    font = pygame.font.Font("Font/04B_03__.TTF", 30)
+    font = pygame.font.Font("font/04B_03__.TTF", 30)
     frame_count = 0
     while running_menu:
         for event in pygame.event.get():
@@ -313,7 +313,7 @@ def draw_circle(screen, color, x, y, radius):
 
 def square_breath(screen):
     global bubbles_infront, bubbles_behind
-    font = pygame.font.Font("Font/04B_03__.TTF", 30)
+    font = pygame.font.Font("font/04B_03__.TTF", 30)
     running = True
     inhale_duration = 5  # Durée de l'inhalation en secondes
     hold_duration = 5    # Durée de la retenue en secondes
@@ -405,8 +405,8 @@ def square_breath(screen):
 def countdown(screen):
     global bubbles_infront, bubbles_behind
     number = 10
-    font = pygame.font.Font("Font/04B_03__.TTF", 100)
-    font2 = pygame.font.Font("Font/04B_03__.TTF", 30)
+    font = pygame.font.Font("font/04B_03__.TTF", 100)
+    font2 = pygame.font.Font("font/04B_03__.TTF", 30)
     running = True
     start_time = time.time()
     while running:

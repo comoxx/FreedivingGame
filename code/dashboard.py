@@ -11,8 +11,8 @@ class Dashboard:
         self.screen = screen
         self.mod = mod
         self.plongeur = plongeur
-        self.font = pygame.font.Font("Font/04B_03__.TTF", 20)        
-        self.ocean_images = [pygame.image.load(f"images/ocean.png") for i in range(frames_count)]
+        self.font = pygame.font.Font("font/04B_03__.TTF", 20)        
+        self.ocean_images = [pygame.image.load(f"images/background/ocean.png") for i in range(frames_count)]
         self.ocean_images = [pygame.transform.scale(img, (screen_width(), screen_height() * HEIGHT_POSITION + 25)) for img in self.ocean_images]
         self.ocean_image = self.ocean_images[0]
         self.index_image = 0
@@ -26,10 +26,10 @@ class Dashboard:
 
 
     def init_background(self):
-        image_far = pygame.image.load("images/Background/far.png").convert_alpha()
-        image_sand = pygame.image.load("images/Background/sand.png").convert_alpha()
-        image_fore1 = pygame.image.load("images/Background/foreground-1.png").convert_alpha()
-        image_fore2 = pygame.image.load("images/Background/foreground-2.png").convert_alpha()
+        image_far = pygame.image.load("images/background/far.png").convert_alpha()
+        image_sand = pygame.image.load("images/background/sand.png").convert_alpha()
+        image_fore1 = pygame.image.load("images/background/foreground-1.png").convert_alpha()
+        image_fore2 = pygame.image.load("images/background/foreground-2.png").convert_alpha()
         rect = image_sand.get_rect()
         hauteur_image = rect.height #192
         largeur_image = rect.width #256
