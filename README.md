@@ -1,14 +1,14 @@
 # How to Launch the Game
 
-To start the game, follow these steps:
+To start the game, choose one option:
 
-1. **Using the Executable File:**
+**Using the Executable File (Windows only):**
    - Click on the `.exe` file to launch the game.
    - **Important:** Do not move the `.exe` file from its original folder, as this may cause errors.
-
-2. **Using the Python Script:**
-   - If you prefer to run the game through the source code, ensure you have all the necessary requirements installed.
-   - Once the requirements are set up, run the `main.py` file.
+     
+**Using the Python Script:**
+   - If you prefer to run the game through the source code, ensure you have python, then run : `pip install -r requirements.txt`
+   - Once the requirements are set up, run the command `python main.py` and enjoy the game !
 
 ---
 
